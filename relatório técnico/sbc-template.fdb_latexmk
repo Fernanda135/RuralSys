@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1784811469.44546 "c:/Users/thesa/Documents/AgroSys/relatório técnico/sbc-template.tex" "sbc-template.pdf" "sbc-template" 1784811483.50537 0
+["pdflatex"] 1785244975.13263 "c:/Users/thesa/Documents/AgroSys/relatório técnico/sbc-template.tex" "sbc-template.pdf" "sbc-template" 1785244991.85252 0
   "C:/Users/thesa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1782666751 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/thesa/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1781186119 13333487 5d67c3d9311a4990f2f6533d902b68de ""
   "C:/Users/thesa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -81,11 +81,18 @@
   "C:/Users/thesa/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "DER.png" 1784742786 1752542 61b3bb1661b179715f3632c566ab6184 ""
   "arquitetura.png" 1784743697 827032 6b77864c598686e099dc2158a63079f9 ""
-  "c:/Users/thesa/Documents/AgroSys/relatório técnico/sbc-template.tex" 1784811467 26514 dfb5d72dfaaa5ccae3e15a58f27e6a57 ""
+  "c:/Users/thesa/Documents/AgroSys/relatório técnico/sbc-template.tex" 1785244973 30650 6f634782cbcf153ee80153a24ed8bd8d ""
+  "dashboard.png" 1785242798 126893 d8eed923856fe811c769b1d30eb3e20d ""
+  "estoque.png" 1785242999 135338 1abfeb205b0ec7a5c0d6f7136e913373 ""
   "fluxo.png" 1784744949 1124561 84017bc0a513956d5cbb8cd6ae94fc9a ""
-  "sbc-template.aux" 1784811483 5469 58cc6f758f8a897a3f26a7d279f97f43 "pdflatex"
+  "login.png" 1785242373 407327 94d4c8e89cb8520363d05eec1efeae95 ""
+  "plantacoes-1.png" 1785242975 138070 74dc3a4f6bfcb7d4adb77c9fdd2573ab ""
+  "plantacoes-2.png" 1785242988 128660 704984ea6bdf6b9f91d652bafe3ced51 ""
+  "sbc-template.aux" 1785244991 8031 ce7e8ec5f04214c61af38be2157d4c56 "pdflatex"
   "sbc-template.sty" 1784736353 6074 ecc54df5124d8db4ac67c42cc728f3a5 ""
-  "sbc-template.tex" 1784811467 26514 dfb5d72dfaaa5ccae3e15a58f27e6a57 ""
+  "sbc-template.tex" 1785244973 30650 6f634782cbcf153ee80153a24ed8bd8d ""
+  "tarefas.png" 1785242963 117307 7827ad4657629a8d569752905bfce056 ""
+  "vendas.png" 1785243008 110266 fc7b16c9193e1464cb3ae98c226d0111 ""
   (generated)
   "sbc-template.aux"
   "sbc-template.log"

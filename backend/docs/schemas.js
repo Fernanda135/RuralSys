@@ -276,7 +276,55 @@
  *           format: date-time
  *           example: 2024-01-01T00:00:00.000Z
  *     
- *     Finance:
+ *     SaleItem:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: integer
+ *           example: 1
+ *         sale_id:
+ *           type: integer
+ *           example: 10
+ *         stock_id:
+ *           type: integer
+ *           example: 5
+ *         quantity:
+ *           type: number
+ *           format: float
+ *           example: 20
+ *         unit:
+ *           type: string
+ *           example: kg
+ *         unit_price:
+ *           type: number
+ *           format: float
+ *           example: 12.50
+ *         total_price:
+ *           type: number
+ *           format: float
+ *           example: 250.00
+ *         stock:
+ *           $ref: '#/components/schemas/Stock'
+ *
+ *     CreateSaleItemRequest:
+ *       type: object
+ *       required:
+ *         - stock_id
+ *         - quantity
+ *       properties:
+ *         stock_id:
+ *           type: integer
+ *           description: ID do produto em estoque
+ *           example: 5
+ *         quantity:
+ *           type: number
+ *           format: float
+ *           example: 20
+ *         unit:
+ *           type: string
+ *           example: kg
+ *
+ *     Sale:
  *       type: object
  *       properties:
  *         id:
@@ -285,51 +333,115 @@
  *         user_id:
  *           type: integer
  *           example: 1
- *         isIncome:
- *           type: boolean
- *           description: true = receita, false = despesa
- *           example: true
- *         description:
+ *         client_name:
  *           type: string
- *           example: Venda de soja
- *         amount:
+ *           example: João Silva
+ *         total_price:
  *           type: number
  *           format: float
- *           example: 15000.00
- *         category:
- *           type: string
- *           example: Vendas
- *         transactionDate:
+ *           example: 580.50
+ *         sale_date:
  *           type: string
  *           format: date
- *           example: 2024-06-15
+ *           example: 2026-07-28
+ *         payment_method:
+ *           type: string
+ *           example: PIX
+ *         notes:
+ *           type: string
+ *           example: Venda realizada na feira municipal.
+ *         status:
+ *           type: string
+ *           enum:
+ *             - PENDENTE
+ *             - PAGO
+ *             - CANCELADO
+ *           example: PAGO
  *         createdAt:
  *           type: string
  *           format: date-time
- *           example: 2024-01-01T00:00:00.000Z
  *         updatedAt:
  *           type: string
  *           format: date-time
- *           example: 2024-01-01T00:00:00.000Z
- *     
- *     FinanceSummary:
+ *         items:
+ *           type: array
+ *           items:
+ *             $ref: '#/components/schemas/SaleItem'
+ *
+ *     CreateSaleRequest:
+ *       type: object
+ *       required:
+ *         - client_name
+ *         - payment_method
+ *         - items
+ *       properties:
+ *         client_name:
+ *           type: string
+ *           description: Nome do cliente
+ *           example: João Silva
+ *         payment_method:
+ *           type: string
+ *           description: Forma de pagamento
+ *           example: PIX
+ *         sale_date:
+ *           type: string
+ *           format: date
+ *           example: 2026-07-28
+ *         notes:
+ *           type: string
+ *           example: Venda realizada na feira.
+ *         status:
+ *           type: string
+ *           enum:
+ *             - PENDENTE
+ *             - PAGO
+ *             - CANCELADO
+ *           example: PAGO
+ *         items:
+ *           type: array
+ *           items:
+ *             $ref: '#/components/schemas/CreateSaleItemRequest'
+ *
+ *     UpdateSaleRequest:
  *       type: object
  *       properties:
- *         totalIncome:
+ *         client_name:
+ *           type: string
+ *           example: Maria Oliveira
+ *         payment_method:
+ *           type: string
+ *           example: Dinheiro
+ *         sale_date:
+ *           type: string
+ *           format: date
+ *         notes:
+ *           type: string
+ *           example: Cliente retirou os produtos.
+ *         status:
+ *           type: string
+ *           enum:
+ *             - PENDENTE
+ *             - PAGO
+ *             - CANCELADO
+ *         items:
+ *           type: array
+ *           items:
+ *             $ref: '#/components/schemas/CreateSaleItemRequest'
+ *
+ *     SalesSummary:
+ *       type: object
+ *       properties:
+ *         totalSales:
+ *           type: integer
+ *           example: 42
+ *         totalAmount:
  *           type: number
  *           format: float
- *           description: Total de receitas
- *           example: 150000.00
- *         totalExpense:
+ *           example: 18250.75
+ *         averageTicket:
  *           type: number
  *           format: float
- *           description: Total de despesas
- *           example: 75000.00
- *         balance:
- *           type: number
- *           format: float
- *           description: Saldo (receitas - despesas)
- *           example: 75000.00
+ *           example: 434.54
  *     
  *     AuditLog:
  *       type: object

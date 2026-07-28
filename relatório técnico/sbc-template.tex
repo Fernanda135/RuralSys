@@ -31,17 +31,11 @@
 
 \maketitle
 
-\begin{abstract}
-  AgroSys is a web-based agricultural management system developed to assist small farmers in organizing crop production. The system allows users to manage plantations, harvests, inventories, sales, and agricultural tasks through a REST API and a modern web interface. The project aims to improve production planning, reduce information loss, and facilitate decision-making by centralizing agricultural data.
-\end{abstract}
 
 \begin{resumo}
   O AgroSys é um sistema web de gestão agrícola desenvolvido para auxiliar pequenos produtores rurais na organização de suas atividades. O sistema permite gerenciar plantações, colheitas, estoque de insumos, vendas e tarefas agrícolas por meio de uma API REST e uma interface web moderna. O projeto busca melhorar o planejamento da produção, reduzir perdas de informação e facilitar a tomada de decisões através da centralização dos dados agrícolas.
 \end{resumo}
 
-\noindent \textbf{Keywords:} agricultural management, REST API, web system, small farming, information centralization.
-
-\noindent \textbf{Palavras-chave:} gestão agrícola, API REST, sistema web, agricultura familiar, centralização de informações.
 
 \section{Visão Geral}
 
@@ -71,25 +65,26 @@ O sistema disponibiliza funcionalidades para o cadastro e acompanhamento de plan
 O sistema busca oferecer uma solução simples, intuitiva e de fácil utilização, contribuindo para uma melhor organização da propriedade rural e auxiliando os produtores na tomada de decisões por meio de informações atualizadas e centralizadas.
 
 
-\section{Descrição do Sistema} 
-O \textbf{AgroSys} é um sistema web desenvolvido para auxiliar pequenos produtores rurais no gerenciamento das atividades agrícolas de forma simples e centralizada. A aplicação foi projetada seguindo uma arquitetura cliente-servidor, sendo composta por um frontend responsável pela interface com o usuário e uma API REST responsável pelo processamento das regras de negócio e pela comunicação com o banco de dados. 
+\section{Descrição do Sistema}
+O \textbf{AgroSys} é um sistema web desenvolvido para auxiliar pequenos produtores rurais no gerenciamento das atividades agrícolas de forma simples e centralizada. A aplicação foi projetada seguindo uma arquitetura cliente-servidor, sendo composta por um frontend responsável pela interface com o usuário e uma API REST responsável pelo processamento das regras de negócio e pela comunicação com o banco de dados.
 
-O acesso ao sistema é realizado por meio de autenticação utilizando JSON Web Tokens (JWT), garantindo que apenas usuários autenticados possam acessar suas informações. Após o login, o usuário tem acesso aos módulos da aplicação, podendo cadastrar, consultar, atualizar e remover dados relacionados à sua propriedade. 
+O acesso ao sistema é realizado por meio de autenticação utilizando JSON Web Tokens (JWT), garantindo que apenas usuários autenticados possam acessar suas informações. Após o login, o usuário tem acesso aos módulos da aplicação, podendo cadastrar, consultar, atualizar e remover dados relacionados à sua propriedade.
 
-\subsection{Funcionalidades} 
-O \textbf{AgroSys} disponibiliza os seguintes módulos: 
+\subsection{Funcionalidades}
+O \textbf{AgroSys} disponibiliza os seguintes módulos:
 
-\begin{itemize} 
-  \item \textbf{Gerenciamento de Plantações:} permite cadastrar culturas, informar datas de plantio e colheita, variedade cultivada, quantidade plantada, produção esperada, status da plantação e observações. 
-  
-  \item \textbf{Controle de Estoque:} possibilita o cadastro e gerenciamento dos insumos e produtos armazenados, incluindo quantidade disponível, categoria, unidade de medida e preço unitário. 
-  
-  \item \textbf{Gerenciamento de Vendas:} permite registrar as vendas realizadas, armazenando informações como cliente, data da venda, forma de pagamento, valor total e os produtos comercializados. 
-  
-  \item \textbf{Gerenciamento de Tarefas:} possibilita criar, acompanhar e concluir atividades relacionadas à produção agrícola, auxiliando no planejamento das operações da propriedade. 
-  
-  \item \textbf{Autenticação de Usuários:} realiza o cadastro, autenticação e gerenciamento das sessões dos usuários por meio de Access Tokens e Refresh Tokens. 
+\begin{itemize}
+  \item \textbf{Gerenciamento de Plantações:} permite cadastrar culturas, informar datas de plantio e colheita, variedade cultivada, quantidade plantada, produção esperada, status da plantação e observações.
+
+  \item \textbf{Controle de Estoque:} possibilita o cadastro e gerenciamento dos insumos e produtos armazenados, incluindo quantidade disponível, categoria, unidade de medida e preço unitário.
+
+  \item \textbf{Gerenciamento de Vendas:} permite registrar as vendas realizadas, armazenando informações como cliente, data da venda, forma de pagamento, valor total e os produtos comercializados.
+
+  \item \textbf{Gerenciamento de Tarefas:} possibilita criar, acompanhar e concluir atividades relacionadas à produção agrícola, auxiliando no planejamento das operações da propriedade.
+
+  \item \textbf{Autenticação de Usuários:} realiza o cadastro, autenticação e gerenciamento das sessões dos usuários por meio de Access Tokens e Refresh Tokens.
 \end{itemize}
+
 
 \subsection{Fluxo de Funcionamento}
 
@@ -106,11 +101,115 @@ Após a conclusão da operação, a API retorna uma resposta ao frontend contend
 A Figura~\ref{fig:fluxo} apresenta o fluxograma simplificado do funcionamento do \textbf{AgroSys}.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{fluxo.png}
-    \caption{Fluxo de funcionamento do AgroSys.}
-    \label{fig:fluxo}
+  \centering
+  \includegraphics[width=0.9\textwidth]{fluxo.png}
+  \caption{Fluxo de funcionamento do AgroSys.}
+  \label{fig:fluxo}
 \end{figure}
+
+
+\section{Interface do Sistema}
+
+A interface do \textbf{AgroSys} foi desenvolvida com o objetivo de proporcionar uma experiência simples, intuitiva e responsiva aos pequenos produtores rurais. O frontend foi implementado utilizando Next.js, React, TypeScript e Tailwind CSS, priorizando uma navegação clara entre os módulos do sistema e facilitando o acesso às principais funcionalidades.
+
+As telas foram organizadas de forma que o usuário consiga realizar suas operações com poucos passos, reduzindo a complexidade das tarefas diárias relacionadas ao gerenciamento da propriedade rural. Nesta seção são apresentadas as principais interfaces desenvolvidas.
+
+\subsection{Tela de Login}
+
+A autenticação é realizada por meio de credenciais cadastradas pelo usuário. Após a validação das informações na API REST, utilizando JSON Web Tokens (JWT), o acesso às funcionalidades do sistema é liberado.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{login.png}
+  \caption{Tela de autenticação do AgroSys.}
+  \label{fig:login}
+\end{figure}
+
+\subsection{Dashboard}
+
+Após a autenticação, o usuário é direcionado ao painel principal da aplicação. O dashboard reúne indicadores gerais do sistema, permitindo uma visão rápida das plantações cadastradas, tarefas pendentes e demais informações importantes para o gerenciamento da propriedade.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{dashboard.png}
+  \caption{Painel principal do AgroSys.}
+  \label{fig:dashboard}
+\end{figure}
+
+\subsection{Gerenciamento de Plantações}
+
+O módulo de plantações permite cadastrar novas culturas, atualizar informações, acompanhar o status da produção e visualizar todas as plantações registradas pelo usuário.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{plantacoes-1.png}
+  \caption{Interface de gerenciamento de plantações.}
+  \label{fig:plantacoes-1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{plantacoes-2.png}
+  \caption{Interface de gerenciamento de plantações.}
+  \label{fig:plantacoes-2}
+\end{figure}
+
+\subsection{Controle de Estoque}
+
+O gerenciamento de estoque possibilita controlar os produtos armazenados na propriedade, registrando quantidade disponível, categoria, unidade de medida e preço unitário.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{estoque.png}
+  \caption{Interface de gerenciamento de estoque.}
+  \label{fig:estoque}
+\end{figure}
+
+\subsection{Gerenciamento de Vendas}
+
+O módulo de vendas permite registrar comercializações realizadas, armazenando informações como cliente, forma de pagamento, produtos vendidos e valor total da operação.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{vendas.png}
+  \caption{Interface de gerenciamento de vendas.}
+  \label{fig:vendas}
+\end{figure}
+
+\subsection{Gerenciamento de Tarefas}
+
+O gerenciamento de tarefas auxilia no planejamento das atividades agrícolas, permitindo cadastrar, acompanhar e concluir atividades relacionadas à produção.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{tarefas.png}
+  \caption{Interface de gerenciamento de tarefas.}
+  \label{fig:tarefas}
+\end{figure}
+
+
+\section{Requisitos Funcionais}
+
+O AgroSys foi desenvolvido para atender às principais necessidades relacionadas ao gerenciamento de propriedades rurais de pequeno porte. A Tabela~\ref{tab:rf} apresenta os principais requisitos funcionais implementados.
+
+\begin{table}[H]
+  \centering
+  \caption{Requisitos funcionais do sistema}
+  \label{tab:rf}
+
+  \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Código} & \textbf{Descrição}                      \\ \hline
+    RF01            & Permitir o cadastro de usuários.        \\ \hline
+    RF02            & Permitir autenticação utilizando JWT.   \\ \hline
+    RF03            & Cadastrar, editar e excluir plantações. \\ \hline
+    RF04            & Gerenciar o estoque agrícola.           \\ \hline
+    RF05            & Registrar vendas realizadas.            \\ \hline
+    RF06            & Gerenciar tarefas agrícolas.            \\ \hline
+    RF07            & Visualizar indicadores no Dashboard.    \\ \hline
+  \end{tabular}
+
+\end{table}
 
 \section{Arquitetura do Projeto}
 
@@ -127,10 +226,10 @@ A comunicação entre o frontend e o backend ocorre por meio de requisições HT
 A Figura~\ref{fig:arquitetura} apresenta a arquitetura geral do \textbf{AgroSys}.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{arquitetura.png}
-    \caption{Arquitetura geral do AgroSys.}
-    \label{fig:arquitetura}
+  \centering
+  \includegraphics[width=0.95\textwidth]{arquitetura.png}
+  \caption{Arquitetura geral do AgroSys.}
+  \label{fig:arquitetura}
 \end{figure}
 
 
@@ -280,11 +379,10 @@ A Figura~\ref{fig:arquitetura} apresenta a arquitetura geral do \textbf{AgroSys}
   Exibição de alertas de sucesso, erro e informações durante a interação do usuário.                                                           \\
   \hline
 
-  Recharts                                                                         &
-  Biblioteca para criação de gráficos em aplicações React                               &
-  Desenvolvimento de gráficos interativos para visualização de indicadores e dados da produção agrícola. \\
+  Recharts                                                                               &
+  Biblioteca para criação de gráficos em aplicações React                                &
+  Desenvolvimento de gráficos interativos para visualização de indicadores e dados da produção agrícola.                                       \\
   \hline
-
 \end{longtable}
 
 
@@ -303,7 +401,7 @@ Cada usuário pode possuir diversas plantações, produtos em estoque, vendas e 
   \includegraphics[width=\textwidth]{DER.png}
   \caption{Diagrama Entidade-Relacionamento do banco de dados do AgroSys.}
   \label{fig:der}
-\end{figure}  
+\end{figure}
 
 \subsection{Tabelas}
 
@@ -438,6 +536,7 @@ Os recursos da API estão organizados em módulos, permitindo o gerenciamento da
 
 As rotas da API são divididas de acordo com cada módulo funcional do sistema, sendo responsáveis pelas operações de criação, consulta, atualização e remoção de dados.
 
+
 \subsubsection{Autenticação}
 
 O módulo de autenticação permite o cadastro de novos usuários, realização de login, renovação do Access Token utilizando o Refresh Token e encerramento da sessão por meio do logout. As rotas desse módulo garantem que apenas usuários autenticados possam acessar os recursos protegidos da aplicação.
@@ -471,11 +570,11 @@ Além da autenticação, a API implementa mecanismos de autorização, garantind
 Antes da execução das operações solicitadas pelo cliente, a API realiza validações para garantir a integridade dos dados. Entre as principais verificações realizadas estão:
 
 \begin{itemize}
-    \item Validação dos campos obrigatórios;
-    \item Verificação do formato dos dados recebidos;
-    \item Validação das credenciais de autenticação;
-    \item Verificação da existência dos registros antes de atualizações ou exclusões;
-    \item Associação dos dados ao usuário autenticado.
+  \item Validação dos campos obrigatórios;
+  \item Verificação do formato dos dados recebidos;
+  \item Validação das credenciais de autenticação;
+  \item Verificação da existência dos registros antes de atualizações ou exclusões;
+  \item Associação dos dados ao usuário autenticado.
 \end{itemize}
 
 Essas validações reduzem a ocorrência de inconsistências no banco de dados e garantem maior confiabilidade às informações armazenadas.
@@ -487,13 +586,13 @@ A API implementa um mecanismo centralizado de tratamento de erros, retornando re
 Entre os principais códigos utilizados destacam-se:
 
 \begin{itemize}
-    \item \textbf{200 (OK):} operação realizada com sucesso;
-    \item \textbf{201 (Created):} recurso criado com sucesso;
-    \item \textbf{400 (Bad Request):} dados enviados inválidos;
-    \item \textbf{401 (Unauthorized):} usuário não autenticado ou token inválido;
-    \item \textbf{403 (Forbidden):} usuário sem permissão para acessar o recurso;
-    \item \textbf{404 (Not Found):} recurso não encontrado;
-    \item \textbf{500 (Internal Server Error):} erro interno do servidor.
+  \item \textbf{200 (OK):} operação realizada com sucesso;
+  \item \textbf{201 (Created):} recurso criado com sucesso;
+  \item \textbf{400 (Bad Request):} dados enviados inválidos;
+  \item \textbf{401 (Unauthorized):} usuário não autenticado ou token inválido;
+  \item \textbf{403 (Forbidden):} usuário sem permissão para acessar o recurso;
+  \item \textbf{404 (Not Found):} recurso não encontrado;
+  \item \textbf{500 (Internal Server Error):} erro interno do servidor.
 \end{itemize}
 
 A padronização das respostas facilita a comunicação entre o frontend e o backend, permitindo que a interface apresente mensagens de erro claras e adequadas ao usuário.
@@ -501,7 +600,11 @@ A padronização das respostas facilita a comunicação entre o frontend e o bac
 
 \section{Conclusão}
 
-O \textbf{AgroSys} foi desenvolvido com o objetivo de auxiliar pequenos produtores rurais no gerenciamento de suas atividades agrícolas. O sistema reúne funcionalidades para controle de plantações, estoque, vendas e tarefas, oferecendo uma solução web organizada e de fácil utilização. A utilização de tecnologias modernas, como Node.js, Express, PostgreSQL, React e Next.js, possibilitou o desenvolvimento de uma aplicação segura, escalável e adequada às necessidades propostas.
+O AgroSys foi desenvolvido com o objetivo de auxiliar pequenos produtores rurais no gerenciamento de suas atividades agrícolas por meio de uma plataforma web moderna e intuitiva. A aplicação reúne funcionalidades para o controle de plantações, estoque, vendas e tarefas, centralizando informações que normalmente são registradas de forma manual ou distribuídas em diferentes ferramentas.
+
+Durante o desenvolvimento foram aplicados conceitos de arquitetura cliente-servidor, APIs REST, autenticação baseada em JSON Web Tokens (JWT) e persistência de dados utilizando PostgreSQL. A utilização de tecnologias como Next.js, React, Node.js, Express e Sequelize contribuiu para a construção de uma aplicação organizada, escalável e de fácil manutenção.
+
+Os resultados obtidos demonstram que o sistema atende aos requisitos propostos, oferecendo uma interface intuitiva e recursos que auxiliam o produtor rural na organização de suas atividades diárias, contribuindo para um melhor acompanhamento da produção agrícola.
 
 
 % \bibliographystyle{sbc}
